@@ -24,6 +24,12 @@ async function main() {
   await prisma.question.create({
     data: {
       question: 'siapa nama bapak dari jokowi'.toLowerCase(),
+      options: [
+        'Siapa aja boleh'.toLowerCase(),
+        'Siapa aju boleh'.toLowerCase(),
+        'Siapa aji boleh'.toLowerCase(),
+        'Siapa ajo boleh'.toLowerCase(),
+      ],
       answer: {
         create: {
           answer: 'Siapa aja boleh'.toLowerCase(),
@@ -35,6 +41,7 @@ async function main() {
   const createdAdvice = await prisma.advice.create({
     data: {
       advice: 'Test advice 1',
+      upload_by: 'user test',
     },
   })
 
